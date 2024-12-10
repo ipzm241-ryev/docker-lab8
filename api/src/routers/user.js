@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
     try {
         const users = await User.find()
-        res.json(users)
+        res.json({message:"list of users", users})
     } catch (error) {
         res.send(error.message)
     }
